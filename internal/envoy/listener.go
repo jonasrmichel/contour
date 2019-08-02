@@ -29,11 +29,9 @@ import (
 )
 
 // HTTPDefaultIdleTimeout sets the idle timeout for HTTP connections
-// to 60 seconds. This is chosen as a rough default to stop idle connections
-// wasting resources, without stopping slow connections from being terminated
-// too quickly.
+// to 0 seconds (infinite). This effectively disables idle timeouts.
 // Exported so the same value can be used here and in e2e tests.
-const HTTPDefaultIdleTimeout = 60 * time.Second
+const HTTPDefaultIdleTimeout = 0
 
 // TCPDefaultIdleTimeout sets the idle timeout in seconds for
 // connections through a TCP Proxy type filter.
